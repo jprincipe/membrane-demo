@@ -17,6 +17,7 @@ defmodule Membrane.Demo.FirstElement.Pipeline do
           channels: 2
         }
       },
+      amps: Membrane.Element.Audiometer.Peakmeter,
       # Here is a declaration of our element
       counter: %Membrane.Demo.FirstElement.Element{interval: 5000},
       sink: Membrane.Element.PortAudio.Sink
@@ -24,7 +25,8 @@ defmodule Membrane.Demo.FirstElement.Pipeline do
 
     links = %{
       {:file_src, :output} => {:decoder, :input},
-      {:decoder, :output} => {:converter, :input},
+      {:decoder, :output} => {:amps, :input},
+      {:amps, :output} => {:converter, :input},
       # link element between converter and sink
       {:converter, :output} => {:counter, :input, pad: [divisor: 10]},
       {:counter, :output} => {:sink, :input}

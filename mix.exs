@@ -29,6 +29,7 @@ defmodule Membrane.Demo.MixProject do
   defp deps do
     [
       {:membrane_core, "~> 0.3.0"},
+      {:membrane_element_audiometer, github: "jprincipe/membrane-element-audiometer"},
       {:membrane_element_file, "~> 0.2.3"},
       {:membrane_element_portaudio, "~> 0.2.3"},
       {:membrane_element_ffmpeg_swresample, "~> 0.2.3"},
