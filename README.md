@@ -5,7 +5,9 @@ This repository contains two demos that can help understanding how to use Membra
 ## Prerequisites
 
 1. Make sure you have Elixir installed on your machine. See: https://elixir-lang.org/install.html
+1. `brew install pkgconfig portaudio ffmpeg mad`
 1. Fetch the required dependencies by running `mix deps.get`
+1. `mix compile`
 
 ## First Pipeline Demo
 
